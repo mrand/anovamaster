@@ -41,6 +41,11 @@ services:
     image: lolouk44/anovamaster:latest
     container_name: anova
     restart: unless-stopped
+    
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
     network_mode: host
     privileged: true
@@ -51,7 +56,7 @@ services:
     - MQTT_PREFIX=anova
     - MQTT_USERNAME=       # Username for MQTT server (comment out if not required)
     - MQTT_PASSWORD=       # Password for MQTT (comment out if not required)
-    - MQTT_PORT=           # Defaults to 1883
+    - MQTT_PORT=1883       # Port for MQTT server
     - MQTT_TIMEOUT=30      # Defaults to 60
     - LOGGING_LEVEL=DEBUG  # Defaults to INFO
     volumes:
