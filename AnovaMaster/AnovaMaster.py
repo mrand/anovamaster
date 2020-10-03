@@ -17,7 +17,7 @@ from .StatusException import StatusException
 
 import bluepy
 
-valid_states = { "disconnected",
+valid_states = { "auto",
                  "off",
                  "heat"
 }
